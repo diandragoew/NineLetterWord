@@ -10,6 +10,8 @@ public class Main {
     static Set<String> words = new TreeSet<>();
 
     public static void main(String[] args) throws MalformedURLException {
+        long start = System.currentTimeMillis();
+
         loadAllWords();
 
         TreeSet<String> correctWords = new TreeSet<>();
@@ -28,10 +30,11 @@ public class Main {
         for (String correctWord : correctWords) {
             System.out.println(correctWord);
         }
-
         System.out.println();
-        System.out.println("count correct words: "+ correctWords.size());
+        System.out.println("Count correct words: " + correctWords.size());
 
+        long finish = System.currentTimeMillis();
+        System.out.println("Execution time: " + (finish - start) / 1000 + " seconds");
     }
 
     private static Set<String> loadAllWords() throws MalformedURLException {
